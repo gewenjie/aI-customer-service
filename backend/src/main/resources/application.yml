@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: customer-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/customer_service?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
+    username: root
+    password: root
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
+
+jwt:
+  # 生产环境请务必修改为随机长字符串
+  secret: customer-service-secret-key-please-change-me-in-production-2024
+  expire-hours: 24
+
+app:
+  robot:
+    # 机器人匹配阈值（0-100），低于该分数则返回兜底话术
+    match-threshold: 45
+    fallback-reply: 抱歉，我暂时无法准确回答您的问题。您可以换个问法，或点击下方按钮转接人工客服为您服务。
+    reply-delay-ms: 600
