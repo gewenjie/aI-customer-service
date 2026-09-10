@@ -1,13 +1,13 @@
 # Java
-backend/target/
+customer-service-backend/target/
 *.class
 *.jar
 !.mvn/wrapper/maven-wrapper.jar
 
 # Node
-frontend/node_modules/
-frontend/dist/
-frontend/.vite/
+customer-service-frontend/node_modules/
+customer-service-frontend/dist/
+customer-service-frontend/.vite/
 
 # IDE
 .idea/
